@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kącik MG</title>
+    <link rel="stylesheet" href="style.css" id="arkusz">
+</head>
+<body>
+    <header><a href="index.html"><h1 id="baner">KĄCIK MISTRZA GRY</h1></a></header>
+    <main>
+        <nav>
+            <span><a href="#dice">KOŚCI</a></span>
+            <span><a href="#camp">KAMPANIE</a></span>
+            <span><a href="#books">PODRĘCZNIKI</a></span>
+        </nav>
+        <article>
+            <h2>Czym są gry TTRPG?</h2>
+            <p>Gry fabularne – znane też jako papierowe RPG – to po angielsku 
+                role-playing games, czyli gry, gdzie odgrywamy jakąś rolę. 
+                Jak się gra w gry RPG? Wcielasz się w wymyślonego bohatera i 
+                patrzysz na świat jego oczami, mówisz, co myśli i jakie 
+                działania podejmuje. Wszystko toczy się w fikcyjnej 
+                rzeczywistości stworzonej wspólnie przez grających, zazwyczaj 
+                Mistrza Gry oraz kilku graczy. Razem wymyślają i opowiadają 
+                oni jakąś historię: w większości gra fabularna RPG polega na rozmowie.</p><p>Najbardziej znane tytuły:</p>
+                <ol>
+                    <li>Dungeons and Dragons</li>
+                    <li>Warhammer Fantasy</li>
+                    <li>Zew Cthulhu</li>
+                </ol>
+            <h2 id="dice">KOŚCI</h2>
+            <p>Ktoś z graczy zapomniał o swoich kościach? A może potrzebujesz wylosowac wynik 
+                spośród niestandardowych wartości? Kliknij na symbol wybranej kości, dopisz modyfikator, 
+                jeżeli jest on istotny, a otrzymasz wynik!</p>
+                <section class="mjnd">
+                    <table>
+                        <tr>
+                            <td>KOŚCI</td>
+                            <td>ILOŚĆ</td>
+                            <td>WYNIK</td>
+                        </tr>
+                        <tr>
+                            <td><img src="pics/K20.png" class="die"></td>
+                            <td id="quant"></td>
+                            <td class="ev"></td>
+                        </tr>
+                        <tr>
+                            <td><img src="pics/K12.png" class="die"></td>
+                            <td id="quant"></td>
+                            <td class="ev"></td>
+                        </tr>
+                        <tr>
+                            <td><img src="pics/K10.png" class="die"></td>
+                            <td id="quant"></td>
+                            <td class="ev"></td>
+                        </tr>
+                        <tr>
+                            <td><img src="pics/K8.png" class="die"></td>
+                            <td id="quant"></td>
+                            <td class="ev"></td>
+                        </tr>
+                        <tr>
+                            <td><img src="pics/K6.png" class="die"></td>
+                            <td id="quant"></td>
+                            <td class="ev"></td>
+                        </tr>
+                        <tr>
+                            <td><img src="pics/K4.png" class="die"></td>
+                            <td id="quant"></td>
+                            <td class="ev"></td>
+                        </tr>
+                        <tr>
+                            <td><img src="pics/qm.png" class="die"></td>
+                            <td id="quant"></td>
+                            <td class="ev"></td>
+                        </tr>
+                    </table>
+                    <form id="fk">
+                        <label for="modyf">Podaj modyfikator: </label><input type="number" id="modyf">
+                        <br>
+                        <section id="dowyniku"></section>
+                        <input type="button" id="diceadd" onclick="showFullSum()" value="Oblicz">
+                        <input type="button" id="dicepres" onclick="resetDR()" value="Zresetuj">
+                    </form>
+                </section>
+            <h2 id="camp">KAMPANIE</h2>
+            <p>Uporządkuj kampanie, których oczekujesz!</p>
+            <section class="mjnd">
+                <form>    
+                    Wybierz swoją rolę:
+                    <br>
+                    <input type="radio" id="MG" name="camprole" value="MG"><label for="MG">Mistrz gry</label>
+                    <input type="radio" id="G" name="camprole" value="Gracz"><label for="G">Gracz</label>
+                    <br>
+                    <label for="campnazwa">Nazwa kampanii: </label><input type="text" id="campnazwa" placeholder="Kampania">
+                    <br>
+                    <label for="campsys">System: </label><input type="text" id="campsys" placeholder="System">
+                    <br>
+                    <label for="campdate">Podaj datę: </label><input type="date" id="campdate">
+                    <br>
+                    <label for="camptime">Podaj godzinę rozpoczęcia sesji: </label><input type="time" id="camptime">
+                    <br>
+                    <label for="campai">Dodatkowe informacje: </label><br><textarea id="campai"></textarea>
+                    <br>
+                    <input type="button" id="campadd" onclick="campaddjs()" value="Zapisz">
+                    <input type="reset" id="campres" value="Zresetuj">
+                </form>
+                <section id="przesCampNotes">
+                </section>
+            </section>
+            <h2 id="books">PODRĘCZNIKI</h2>
+            <p>Zbiór najpopularniejszych systemów TTRPG:</p>
+            <section class="galeria">
+                <section id="galinfo">
+                    <h2 style="color: black; text-align: center;">Dungeongs and Dragons</h2>
+                    <p style="color: black">Uważana za prekursora gatunku fabularna gra 
+                        fantasy zaprojektowana przez Gary’ego Gygaxa i Dave’a Arnesona, po 
+                        raz pierwszy opublikowana w 1974 przez Tactical Studies Rules (TSR). 
+                        Aktualnie grę wydaje Wizards of the Coast, przedsiębiorstwo zależne od 
+                        Hasbro. Wywodzi się ona z miniaturowych gier figurkowych, jako wariant 
+                        gry Chainmail zawierającej zbliżony system rozgrywki. Publikacja D&D 
+                        jest szeroko uznawana za początek nowoczesnych gier RPG i, co więcej, 
+                        całego przemysłu gier fabularnych.</p>
+                </section>
+                <section id="galimg">
+                    <img src="pics/dnd.jpg" id="obrazek">
+                    <img src="pics/la.png" id="p">
+                    <img src="pics/lr.png" id="n">
+                </section>
+            </section>
+            <input type="button" id="cs" value="WIĘKSZY KONTRAST" style="width: 150px;">
+        </article>
+        <footer>KB2TP</footer>
+    </main>
+    <script src="scriptDiceRoller.js"></script>
+    <script src="scriptForm.js"></script>
+    <script src="scriptGallery.js"></script>
+    <script src="scriptWymagania.js"></script>
+</body>
+</html>
